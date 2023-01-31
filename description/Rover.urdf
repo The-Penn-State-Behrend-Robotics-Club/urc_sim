@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="rover">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="-0.000594995884380202 0.00251276387006885 0.0433983283767476"
+        rpy="0 0 0" />
+      <mass
+        value="1.99855104949133" />
+      <inertia
+        ixx="0.198247878867242"
+        ixy="-3.52975278475922E-05"
+        ixz="0.000211915925417546"
+        iyy="0.245074300796456"
+        iyz="-0.000817117992123449"
+        izz="0.0470085163720882" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file://$(find rover)/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.749019607843137 0.749019607843137 0.749019607843137 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file://$(find rover)/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="right_upper_suspension">
+    <inertial>
+      <origin
+        xyz="-0.005 -0.120644666103442 -0.095792284090686"
+        rpy="0 0 0" />
+      <mass
+        value="0.360619280168868" />
+      <inertia
+        ixx="0.0135367473156308"
+        ixy="3.19160400857387E-06"
+        ixz="-5.93469655960303E-06"
+        iyy="0.0121186134312356"
+        iyz="-0.00254842235355181"
+        izz="0.00142540084279272" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file://$(find rover)/meshes/right_upper_suspension.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file://$(find rover)/meshes/right_upper_suspension.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_shoulder_joint"
+    type="fixed">
+    <origin
+      xyz="0.23 0 0.055788"
+      rpy="1.5708 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="right_upper_suspension" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="right_lower_suspension">
+    <inertial>
+      <origin
+        xyz="-0.000992682727447264 0.0157930557785884 -0.168762446036438"
+        rpy="0 0 0" />
+      <mass
+        value="0.601766014605083" />
+      <inertia
+        ixx="0.017760953879929"
+        ixy="3.58959418893196E-06"
+        ixz="-5.7027864207679E-06"
+        iyy="0.0162672967254588"
+        iyz="-0.00179580063158541"
+        izz="0.00150494322510838" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file://$(find rover)/meshes/right_lower_suspension.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file://$(find rover)/meshes/right_lower_suspension.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_rocker_joint"
+    type="continuous">
+    <origin
+      xyz="0 -0.15607 0.18891"
+      rpy="-0.068371 0 0" />
+    <parent
+      link="right_upper_suspension" />
+    <child
+      link="right_lower_suspension" />
+    <axis
+      xyz="1 0 0" />
+  </joint>
+  <link
+    name="left_upper_suspension">
+    <inertial>
+      <origin
+        xyz="0.005 -0.120644666103442 -0.095792284090375"
+        rpy="0 0 0" />
+      <mass
+        value="0.360619280168868" />
+      <inertia
+        ixx="0.0135367473156308"
+        ixy="-3.19160400857388E-06"
+        ixz="5.93469655960306E-06"
+        iyy="0.0121186134312356"
+        iyz="-0.0025484223535518"
+        izz="0.00142540084279274" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file://$(find rover)/meshes/left_upper_suspension.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file://$(find rover)/meshes/left_upper_suspension.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left_shoulder_joint"
+    type="fixed">
+    <origin
+      xyz="-0.23 0.0028356 0.055714"
+      rpy="1.5187 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="left_upper_suspension" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="left_lower_suspension">
+    <inertial>
+      <origin
+        xyz="0.000992682727447292 0.00987411455296541 -0.169807042268549"
+        rpy="0 0 0" />
+      <mass
+        value="0.601766014605083" />
+      <inertia
+        ixx="0.017760953879929"
+        ixy="-3.38806706043133E-06"
+        ixz="5.82477132565128E-06"
+        iyy="0.0161280421056343"
+        iyz="-0.00218573542784638"
+        izz="0.00164419784493291" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file://$(find rover)/meshes/left_lower_suspension.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file://$(find rover)/meshes/left_lower_suspension.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left_rocker_joint"
+    type="continuous">
+    <origin
+      xyz="0 -0.15607 0.18891"
+      rpy="-0.03341 0 0" />
+    <parent
+      link="left_upper_suspension" />
+    <child
+      link="left_lower_suspension" />
+    <axis
+      xyz="1 0 0" />
+  </joint>
+
+
+  <gazebo>
+
+    <plugin name='diff_drive' filename='libgazebo_ros_diff_drive.so'>
+
+
+        <!-- Wheel Information -->
+        <left_joint>left_rocker_joint</left_joint>
+        <right_joint>right_rocker_joint</right_joint>
+        <wheel_separation>1</wheel_separation>
+        <wheel_diameter>0.1</wheel_diameter>
+
+
+        <!-- Limits -->
+        <max_wheel_torque>200</max_wheel_torque>
+        <max_wheel_acceleration>10.0</max_wheel_acceleration>
+
+
+        <!-- Output -->
+        <odometry_frame>odom</odometry_frame>
+        <robot_base_frame>base_link</robot_base_frame>
+
+        <publish_odom>true</publish_odom>
+        <publish_odom_tf>true</publish_odom_tf>
+        <publish_wheel_tf>true</publish_wheel_tf>
+
+
+    </plugin>
+
+</gazebo>
+</robot>

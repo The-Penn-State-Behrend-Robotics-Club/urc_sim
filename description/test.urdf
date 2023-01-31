@@ -1,0 +1,91 @@
+<?xml version="1.0"?>
+<robot name="myfirst">
+  <link name="base_link">
+    <visual>
+      <geometry>
+        <cylinder length="0.6" radius="0.2"/>
+      </geometry>
+    </visual>
+  </link>
+</robot>
+<gazebo>
+
+  <plugin name='diff_drive' filename='libgazebo_ros_diff_drive.so'>
+
+
+      <!-- Wheel Information -->
+      <left_joint>left_front_motor</left_joint>
+      <right_joint>right_front_motor</right_joint>
+      <wheel_separation>0.5508</wheel_separation>
+      <wheel_diameter>0.254</wheel_diameter>
+
+
+      <!-- Limits -->
+      <max_wheel_torque>200</max_wheel_torque>
+      <max_wheel_acceleration>10.0</max_wheel_acceleration>
+
+
+      <!-- Output -->
+      <odometry_frame>odom</odometry_frame>
+      <robot_base_frame>base_link</robot_base_frame>
+
+      <publish_odom>true</publish_odom>
+      <publish_odom_tf>true</publish_odom_tf>
+      <publish_wheel_tf>true</publish_wheel_tf>
+
+
+  </plugin>
+
+  <plugin name='diff_drive' filename='libgazebo_ros_diff_drive.so'>
+
+
+    <!-- Wheel Information -->
+    <left_joint>left_mid_motor</left_joint>
+    <right_joint>right_mid_motor</right_joint>
+    <wheel_separation>0.5508</wheel_separation>
+    <wheel_diameter>0.254</wheel_diameter>
+
+
+    <!-- Limits -->
+    <max_wheel_torque>200</max_wheel_torque>
+    <max_wheel_acceleration>10.0</max_wheel_acceleration>
+
+
+    <!-- Output -->
+    <odometry_frame>odom</odometry_frame>
+    <robot_base_frame>base_link</robot_base_frame>
+
+    <publish_odom>true</publish_odom>
+    <publish_odom_tf>true</publish_odom_tf>
+    <publish_wheel_tf>true</publish_wheel_tf>
+
+
+</plugin>
+
+<plugin name='diff_drive' filename='libgazebo_ros_diff_drive.so'>
+
+
+  <!-- Wheel Information -->
+  <left_joint>left_rear_motor</left_joint>
+  <right_joint>right_rear_motor</right_joint>
+  <wheel_separation>0.5508</wheel_separation>
+  <wheel_diameter>0.254</wheel_diameter>
+
+
+  <!-- Limits -->
+  <max_wheel_torque>200</max_wheel_torque>
+  <max_wheel_acceleration>10.0</max_wheel_acceleration>
+
+
+  <!-- Output -->
+  <odometry_frame>odom</odometry_frame>
+  <robot_base_frame>base_link</robot_base_frame>
+
+  <publish_odom>true</publish_odom>
+  <publish_odom_tf>true</publish_odom_tf>
+  <publish_wheel_tf>true</publish_wheel_tf>
+
+
+</plugin>
+
+  </gazebo>
