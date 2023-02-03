@@ -152,7 +152,7 @@
   </link>
   <joint
     name="left_rocker_joint"
-    type="continuous">
+    type="revolute">
     <origin
       xyz="-0.03 -0.0916214430588459 0.19393911388378"
       rpy="3.14159265358979 0 3.14159265358979" />
@@ -162,6 +162,8 @@
       link="left_lower_suspension" />
     <axis
       xyz="-1 0 0" />
+    <limit
+      effort="1000.0" lower="-0.548" upper="0.548" velocity="0.5" />
   </joint>
   <link
     name="left_rear_wheel">
@@ -420,7 +422,7 @@
   </link>
   <joint
     name="right_rocker_joint"
-    type="continuous">
+    type="revolute">
     <origin
       xyz="0.03 -0.101591910871285 0.188907258642256"
       rpy="0 0 0" />
@@ -430,6 +432,8 @@
       link="right_lower_suspension" />
     <axis
       xyz="1 0 0" />
+    <limit
+      effort="1000.0" lower="-0.548" upper="0.548" velocity="0.5" />
   </joint>
   <link
     name="right_rear_wheel">
